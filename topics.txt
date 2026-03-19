@@ -1,0 +1,13 @@
+num_sys
+simpl
+perc
+ratio
+avg
+prof_loss
+interest
+speed
+work
+mixture
+partnership
+algebra
+progression

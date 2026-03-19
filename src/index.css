@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Base Colors - Deep Black/Slate */
+    --background: #09090b;
+    --surface: #18181b;
+    --surface-light: #27272a;
+
+    /* Brand Colors - Emerald / Mint Palette */
+    --primary: #10b981;
+    /* Emerald-500 */
+    --primary-dark: #059669;
+    --secondary: #34d399;
+    /* Emerald-400 */
+    --accent: #2dd4bf;
+    /* Teal-400 */
+
+    /* Text Colors */
+    --text-main: #fafafa;
+    --text-muted: #a1a1aa;
+    --text-light: #d4d4d8;
+
+    /* Status Colors */
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+
+    /* Effects */
+    --radius: 1.5rem;
+    --glass-border: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    @apply bg-[#09090b] text-[#fafafa] antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* Subtle peripheral glow */
+    background-image:
+      radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 100% 100%, rgba(45, 212, 191, 0.05) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-['Outfit'] tracking-tight;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply max-w-2xl mx-auto px-6 py-10 min-h-[calc(100vh-80px)];
+  }
+
+  /* Exact LinguaQuest Glass Panel Style */
+  .glass-card {
+    @apply bg-[#18181b]/60 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-lg transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply border-emerald-500/30 -translate-y-1 shadow-2xl shadow-emerald-500/5;
+  }
+
+  .btn-primary {
+    @apply bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-6 rounded-xl transition-all duration-300 flex items-center gap-2 shadow-lg shadow-emerald-500/20 active:scale-95 text-sm;
+  }
+
+  .section-title {
+    @apply text-xl font-bold mb-8 flex items-center gap-3 text-slate-200 border-b border-white/5 pb-4;
+  }
+
+  .quest-path-line {
+    @apply absolute left-[44px] sm:left-1/2 top-10 bottom-10 w-1 bg-white/5 rounded-full -z-10 -translate-x-1/2;
+  }
+}
+
+.active-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-400;
+}
